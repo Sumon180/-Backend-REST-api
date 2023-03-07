@@ -1,13 +1,15 @@
 import express from "express";
 import mongoose from "mongoose";
-import  router  from "./routes/userRoute";
+import userRouter from "./routes/userRoute.js"
 
 const app = express();
 
 mongoose.set("strictQuery", false);
 mongoose.set("strictQuery", true);
 
-app.use("/api/user", router);
+app.use("/api/user", userRouter);
+
+console.log(process.cwd())
 
 mongoose
   .connect(
