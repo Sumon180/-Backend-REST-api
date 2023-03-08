@@ -17,6 +17,13 @@ const userSchema = new Schema({
     require: true,
     minlength: 6,
   },
+  blogs: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "Blog",
+      require: true,
+    },
+  ],
 });
 
 export default mongoose.model("User", userSchema);
